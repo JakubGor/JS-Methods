@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript String Properties</h2>
+
+    <p>The length property returns the length of a string:</p>
+
+    <p id="demo"></p>
+
+    <script>
+      var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      document.getElementById("demo").innerHTML = txt.length;
+    </script>
+
+    <p>
+      The indexOf() method returns the position of the first occurrence of a
+      specified text:
+    </p>
+
+    <p id="demo2"></p>
+
+    <script>
+      var str = "Please locate where 'locate' occurs!";
+      var pos = str.indexOf("locate");
+      document.getElementById("demo2").innerHTML = pos;
+    </script>
+
+    <p>
+      The lastIndexOf() method returns the position of the last occurrence of a
+      specified text:
+    </p>
+
+    <p id="demo3"></p>
+
+    <script>
+      var str = "Please locate where 'locate' occurs!";
+      var pos = str.lastIndexOf("locate");
+      document.getElementById("demo3").innerHTML = pos;
+    </script>
+
+    <p>Both indexOf(), and lastIndexOf() return -1 if the text is not found:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+      var str = "Please locate where 'locate' occurs!";
+      var pos = str.indexOf("John");
+      document.getElementById("demo4").innerHTML = pos;
+    </script>
+
+    <p>
+      The search() method returns the position of the first occurrence of a
+      specified text in a string:
+    </p>
+
+    <p id="demo5"></p>
+
+    <script>
+      var str = "Please locate where 'locate' occurs!";
+      var pos = str.search("locate");
+      document.getElementById("demo5").innerHTML = pos;
+    </script>
+
+    <p>
+      The slice() method extract a part of a string and returns the extracted
+      parts in a new string:
+    </p>
+
+    <p id="demo6a"></p>
+
+    <script>
+      var str = "Apple, Banana, Kiwi";
+      var res = str.slice(7, 13);
+      document.getElementById("demo6").innerHTML = res;
+    </script>
+
+    <p id="demo6ba"></p>
+
+    <script>
+      var str = "Apple, Banana, Kiwi";
+      var res = str.slice(-12, -6);
+      document.getElementById("demo6b").innerHTML = res;
+    </script>
+
+    <p>
+      The substr() method extract a part of a string and returns the extracted
+      parts in a new string:
+    </p>
+
+    <p id="demo7"></p>
+
+    <script>
+      var str = "Apple, Banana, Kiwi";
+      var res = str.substring(7, 13);
+      document.getElementById("demo7").innerHTML = res;
+    </script>
+
+    <p>
+      The substr() method extract a part of a string and returns the extracted
+      parts in a new string:
+    </p>
+
+    <p id="demo8"></p>
+
+    <script>
+      var str = "Apple, Banana, Kiwi";
+      var res = str.substr(7, 6);
+      document.getElementById("demo8").innerHTML = res;
+    </script>
+
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo9">Please visit Microsoft!</p>
+
+    <script>
+      function myFunction() {
+        var str = document.getElementById("demo9").innerHTML;
+        var txt = str.replace("Microsoft", "W3Schools");
+        document.getElementById("demo9").innerHTML = txt;
+      }
+    </script>
+
+    <p>
+      Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph
+      below:
+    </p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo10">Please visit Microsoft and Microsoft!</p>
+
+    <script>
+      function myFunction() {
+        var str = document.getElementById("demo10").innerHTML;
+        var txt = str.replace(/Microsoft/g, "W3Schools");
+        document.getElementById("demo10").innerHTML = txt;
+      }
+    </script>
+
+    <p>Convert string to upper case:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo11">Hello World!</p>
+
+    <script>
+      function myFunction() {
+        var text = document.getElementById("demo11").innerHTML;
+        document.getElementById("demo11").innerHTML = text.toUpperCase();
+      }
+    </script>
+
+    <p>The concat() method joins two or more strings:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+      var text1 = "Hello";
+      var text2 = "World!";
+      var text3 = text1.concat(" ", text2);
+      document.getElementById("demo12").innerHTML = text3;
+    </script>
+
+    <h2>JavaScript String.trim()</h2>
+
+    <p>Click the button to alert the string with removed whitespace.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p>
+      <strong>Note:</strong> The trim() method is not supported in Internet
+      Explorer 8 and earlier versions.
+    </p>
+
+    <script>
+      function myFunction() {
+        var str = "     Hello World!     ";
+        alert(str.trim());
+      }
+    </script>
+
+    <h2>JavaScript String.trim()</h2>
+
+    <p>
+      IE 8 does not support String.trim(). To trim a string you can use a
+      regular expression instead.
+    </p>
+
+    <script>
+      var str = "     Hello World!     ";
+      alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ""));
+    </script>
+
+    <p>
+      The charAt() method returns the character at a given position in a string:
+    </p>
+
+    <p id="demo13"></p>
+
+    <script>
+      var str = "HELLO WORLD";
+      document.getElementById("demo13").innerHTML = str.charAt(0);
+    </script>
+
+    <p>
+      The charCodeAt() method returns the unicode of the character at a given
+      position in a string:
+    </p>
+
+    <p id="demo14"></p>
+
+    <script>
+      var str = "HELLO WORLD";
+      document.getElementById("demo14").innerHTML = str.charCodeAt(0);
+    </script>
+
+    <p>ECMAScript 5 allows property acces on strings:</p>
+
+    <p id="demo15"></p>
+
+    <script>
+      var str = "HELLO WORLD";
+      document.getElementById("demo15").innerHTML = str[0];
+    </script>
+
+    <p>
+      Click "Try it" to display the first array element, after a string split.
+    </p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo16"></p>
+
+    <script>
+      function myFunction() {
+        var str = "a,b,c,d,e,f";
+        var arr = str.split(",");
+        document.getElementById("demo16").innerHTML = arr[0];
+      }
+    </script>
+  </body>
+</html>
